@@ -1,8 +1,8 @@
 FROM ubuntu:14.04
 
 ENV MESOS_VERSION 0.28.2-2.0.27.ubuntu1404
-ENV SPARK_VERSION 1.5.0
-ENV HADOOP_VERSION 2.6
+ENV SPARK_VERSION 2.1.0
+ENV HADOOP_VERSION 2.7
 ENV SPARK_HOME /opt/spark/dist
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF
