@@ -31,7 +31,7 @@ RUN apt-get update && \
 
 # Update the base ubuntu image with dependencies needed for Spark
 RUN apt-get update && \
-    apt-get install -y python libnss3 openjdk-7-jre-headless mesos=${MESOS_VERSION}
+    apt-get install -y python libnss3 openjdk-8-jre-headless mesos=${MESOS_VERSION}
 
 ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos.so
 
