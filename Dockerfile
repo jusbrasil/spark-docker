@@ -1,12 +1,8 @@
 FROM ubuntu:14.04
 
-ENV MESOS_VERSION 0.28.2-2.0.27.ubuntu1404
 ENV SPARK_VERSION 2.1.0
 ENV HADOOP_VERSION 2.7
 ENV SPARK_HOME /opt/spark/dist
-
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF
-RUN echo "deb http://repos.mesosphere.com/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/mesosphere.list
 
 # Install basic tools
 RUN apt-get update && \
@@ -31,8 +27,6 @@ RUN apt-get update && \
 
 # Update the base ubuntu image with dependencies needed for Spark
 RUN apt-get update && \
-    apt-get install -y python libnss3 openjdk-8-jre-headless mesos=${MESOS_VERSION}
-
-ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos.so
+    apt-get install -y python libnss3 openjdk-8-jre-headless
 
 WORKDIR ${SPARK_HOME}
