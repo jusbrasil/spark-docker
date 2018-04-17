@@ -1,4 +1,4 @@
-FROM openjdk:8-jre
+FROM openjdk:8-jdk
 
 ENV SPARK_VERSION 2.1.0
 ENV LZO_VERSION 0.4.20
